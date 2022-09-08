@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCallback } from "react";
 import { useRecoilState } from "recoil";
-import { authStatus, tokenStatus } from "./../Provider/AuthAtom";
+import { authStatus, tokenStatus } from "../Provider/AuthAtom";
 
 export const useAuthentication = () => {
   const [authState, setAuthState] = useRecoilState(authStatus);
