@@ -21,7 +21,7 @@ const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
           size="small"
           disableElevation
           variant="contained"
-          onClick={() => removeFromCart(item.id)}
+          // onClick={() => removeFromCart(item.id)}
         >
           -
         </Button>

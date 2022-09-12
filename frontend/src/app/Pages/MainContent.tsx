@@ -1,13 +1,10 @@
-import { Grid } from '@mui/material';
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Banner from '../Components/Banner';
-import MenuLists from '../Components/MenuLists';
-import Navbar from '../Components/Navbar';
-import PhoneNumber from '../Components/PhoneNumber';
-import Search from '../Components/Search';
-import Home from './Home';
-import SingleProduct from './SingleProduct';
+import { Grid } from "@mui/material";
+import { Outlet } from "react-router-dom";
+import Footer from "../Components/Footer";
+import MenuLists from "../Components/MenuLists";
+import Navbar from "../Components/Navbar";
+import PhoneNumber from "../Components/PhoneNumber";
+import Search from "../Components/Search";
 
 function MainContent() {
   return (
@@ -27,6 +24,11 @@ function MainContent() {
       <Grid container>
         <Grid item xs={12}>
           <Outlet />
+        </Grid>
+      </Grid>
+      <Grid container>
+        <Grid item xs={12}>
+          <Footer />
         </Grid>
       </Grid>
     </div>

@@ -15,7 +15,7 @@ function Banner() {
           <Typography sx={{ fontWeight: "bold" }}>New Clothes</Typography>
           <Typography variant="h4">
             100% Authentic
-            <br /> Clothes
+            <br /> Car Parts
           </Typography>
           <Typography variant="caption" gutterBottom>
             Free Pickup and Delivery

@@ -65,7 +65,7 @@ function MenuLists() {
         onClick: () => navigate("/products/categories/women's clothing"),
       },
     ],
-    []
+    [navigate]
   );
 
   const handleClick = () => {
@@ -92,14 +92,15 @@ function MenuLists() {
         <ListItemText primary="All Categories" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={open} timeout="auto">
         <List
           component="div"
           disablePadding
           sx={{
             display: "flex",
+            flexWrap: "wrap",
             marginTop: "10px",
-            width: "250%",
+            minWidth: "400%",
           }}
         >
           {categoryItems.map((item, index) => (
@@ -119,34 +120,6 @@ function MenuLists() {
               </ListItemButton>
             </Zoom>
           ))}
-
-          {/* <Zoom in={open} style={{ transitionDelay: open ? '250ms' : '0ms' }}>
-            <ListItemButton>
-              <ListItemIcon>
-                <AttachMoney />
-              </ListItemIcon>
-              <ListItemText primary="Jewelery" />
-            </ListItemButton>
-          </Zoom>
-          <Zoom in={open} style={{ transitionDelay: open ? '450ms' : '0ms' }}>
-            <ListItemButton>
-              <ListItemIcon>
-                <Male />
-              </ListItemIcon>
-              <ListItemText primary="Men's Clothing" sx={{ width: '120px' }} />
-            </ListItemButton>
-          </Zoom>
-          <Zoom in={open} style={{ transitionDelay: open ? '650ms' : '0ms' }}>
-            <ListItemButton>
-              <ListItemIcon>
-                <Female />
-              </ListItemIcon>
-              <ListItemText
-                primary="Women's Clothing"
-               
-              />
-            </ListItemButton>
-          </Zoom> */}
         </List>
       </Collapse>
     </div>

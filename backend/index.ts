@@ -3,7 +3,7 @@ import cors from "cors";
 import express from "express";
 import session from "express-session";
 import "./app/config/database";
-import users from "./app/routes/usersRoute";
+import appRoutes from "./app/routes/index";
 
 import { join } from "path";
 
@@ -22,7 +22,7 @@ const sess: session.SessionOptions = {
 };
 
 app.use(session(sess));
-app.use("/api/auth", users);
+app.use("/api", appRoutes);
 
 const port = 5000;
 const server = app.listen(port, () => {

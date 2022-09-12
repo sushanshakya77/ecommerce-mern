@@ -14,19 +14,19 @@ export function App() {
   const [cartItems, setCartItems] = useState([] as IProducts[]);
   console.log("hi");
   //add to cart
-  const handleAddToCart = (clickedItem: IProducts) => {
-    setCartItems((prev) => {
-      const isItemInCart = prev.find((item) => item.id === clickedItem.id);
+  // const handleAddToCart = (clickedItem: IProducts) => {
+  //   setCartItems((prev) => {
+  //     const isItemInCart = prev.find((item) => item.id === clickedItem.id);
 
-      if (isItemInCart) {
-        return prev.map((item) =>
-          item.id === clickedItem.id ? { ...item, price: item.price + 1 } : item
-        );
-      }
-      // First time the item is added
-      return [...prev, { ...clickedItem, price: 1 }];
-    });
-  };
+  //     if (isItemInCart) {
+  //       return prev.map((item) =>
+  //         item.id === clickedItem.id ? { ...item, price: item.price + 1 } : item
+  //       );
+  //     }
+  //     // First time the item is added
+  //     return [...prev, { ...clickedItem, price: 1 }];
+  //   });
+  // };
   //recoil fetch
   const { authState, fetchAuthState } = useAuthentication();
 
@@ -57,7 +57,7 @@ export function App() {
             </Container>
           }
         >
-          <Route index element={<Home handleAddToCart={handleAddToCart} />} />
+          <Route index element={<Home />} />
           <Route path="/products/categories/:category" element={<Category />} />
           <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/shop" />

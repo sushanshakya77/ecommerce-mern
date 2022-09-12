@@ -99,7 +99,7 @@ export const registerController: express.RequestHandler = async (
 
     res.status(201).send(token);
   } catch (err) {
-    console.log(err);
+    res.status(500).send(err);
   }
 };
 
@@ -123,7 +123,7 @@ export const refreshTokenController: express.RequestHandler = async (
 
   const user = await User.findOne({ username });
 
-  const newToken = jwt.sign(
+  const accessToken = jwt.sign(
     { username },
     "process.env.ACCESS_TOKEN as string",
     {
@@ -133,7 +133,7 @@ export const refreshTokenController: express.RequestHandler = async (
 
   return res.status(200).json({
     user,
-    newToken,
+    accessToken,
   });
 };
 
